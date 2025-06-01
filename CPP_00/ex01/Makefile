@@ -1,5 +1,5 @@
-CXX = g++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++17
+CC = c++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++17
 VAL = valgrind --leak-check=full --track-origins=yes
 SRC = phonebook.cpp
 NAME = phonebook
@@ -7,7 +7,7 @@ NAME = phonebook
 all: $(NAME)
 
 $(NAME):
-	@$(CXX) $(CXXFLAGS) -o $(NAME) $(SRC)
+	@$(CC) $(CPPFLAGS) -o $(NAME) $(SRC)
 
 clean:
 	@rm -f $(NAME)

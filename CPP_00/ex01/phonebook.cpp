@@ -1,44 +1,44 @@
 #include "phonebook.hpp"
 
-std::string format_char(std::string &str)
-{
-    if (str.length() > 10)
-        return (str.substr(0,9) + '.');
-    return str;
-}
-
 int main(void)
 {
+    PhoneBook phonebook;
     std::string command;
-    Contact entry;
     while (true)
     {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
         std::cin >> command;
         if (command == "ADD")
         {
+            Contact entry;
             std::cout << "Enter First Name: ";
             std::cin >> entry.first_name;
             std::cout << "Enter Last Name: ";
             std::cin >> entry.last_name;
             std::cout << "Enter Nickname: ";
             std::cin >> entry.nickname;
+            std::string phone, secret;
             std::cout << "Enter Phone Number: ";
-            std::cin >> entry.phone_number;
+            std::cin >> phone;
             std::cout << "Enter The Darkest Secret: ";
-            std::cin >> entry.darkest_secret;
-            entry.index++;
+            std::cin >> secret;
+            entry.setValue(phone, secret);
+            phonebook.add_Contact(entry);
         }
-        if (command == "SEARCH")
+        else if (command == "SEARCH")
         {
-            std::cout << std::right << std::setw(10) << entry.index << " |" 
-                << std::right << std::setw(10) << format_char(entry.first_name) << " |" 
-                << std::right << std::setw(10) << format_char(entry.last_name) << " |" 
-                << std::right << std::setw(10) << format_char(entry.nickname) << std::endl;
+            phonebook.display_AllContacts();
+            std::cout << "Enter contact index: ";
+            int contact_index;
+            if (!(std::cin >> contact_index))
+                std::cout << "Invalid Index." << std::endl;
+            else
+                phonebook.display_SingleDetail(contact_index);
         }
-        if (command == "EXIT")
-            return (0);
+        else if (command == "EXIT")
+            break;
+        else
+            std::cout << "Invalid command. Try ADD, SEARCH, or EXIT." << std::endl;
     }
-    // ADD-> First Name, Last Name, Nickname, Phone Number, Darkest Secret; {NO EMPTY FIELDS}
-    
+    return (0);
 }
