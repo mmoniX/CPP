@@ -1,5 +1,5 @@
 CC = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++17
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 VAL = valgrind --leak-check=full --track-origins=yes
 SRC = Account.cpp tests.cpp
 NAME = account
