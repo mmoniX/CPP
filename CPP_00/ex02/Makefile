@@ -1,8 +1,8 @@
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++17
 VAL = valgrind --leak-check=full --track-origins=yes
-SRC = main.cpp utils.cpp
-NAME = phonebook
+SRC = Account.cpp tests.cpp
+NAME = account
 
 all: $(NAME)
 

@@ -7,21 +7,21 @@ int main(void)
     while (true)
     {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-        std::cin >> command;
+        std::getline(std::cin, command);
         if (command == "ADD")
         {
             Contact entry;
-            std::cout << "Enter First Name: ";
-            std::cin >> entry.first_name;
-            std::cout << "Enter Last Name: ";
-            std::cin >> entry.last_name;
-            std::cout << "Enter Nickname: ";
-            std::cin >> entry.nickname;
             std::string phone, secret;
+            std::cout << "Enter First Name: ";
+            std::getline(std::cin, entry.first_name);
+            std::cout << "Enter Last Name: ";
+            std::getline(std::cin, entry.last_name);
+            std::cout << "Enter Nickname: ";
+            std::getline(std::cin, entry.nickname);
             std::cout << "Enter Phone Number: ";
-            std::cin >> phone;
+            std::getline(std::cin, phone);
             std::cout << "Enter The Darkest Secret: ";
-            std::cin >> secret;
+            std::getline(std::cin, secret);
             entry.setValue(phone, secret);
             phonebook.add_Contact(entry);
         }
@@ -31,14 +31,15 @@ int main(void)
             std::cout << "Enter contact index: ";
             int contact_index;
             if (!(std::cin >> contact_index))
-                std::cout << "Invalid Index." << std::endl;
+                std::cerr << "Invalid Index." << std::endl;
             else
                 phonebook.display_SingleDetail(contact_index);
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
         else if (command == "EXIT")
             break;
         else
-            std::cout << "Invalid command. Try ADD, SEARCH, or EXIT." << std::endl;
+            std::cerr << "Invalid command. Try ADD, SEARCH, or EXIT." << std::endl;
     }
     return (0);
 }
