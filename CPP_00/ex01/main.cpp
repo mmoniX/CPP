@@ -27,14 +27,8 @@ int main(void)
         }
         else if (command == "SEARCH")
         {
-            phonebook.display_AllContacts();
-            std::cout << "Enter contact index: ";
-            int contact_index;
-            if (!(std::cin >> contact_index))
-                std::cerr << "Invalid Index." << std::endl;
-            else
-                phonebook.display_SingleDetail(contact_index);
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            if (phonebook.display_AllContacts())
+                phonebook.display_SingleDetail();
         }
         else if (command == "EXIT")
             break;

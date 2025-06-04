@@ -1,6 +1,29 @@
 #include "phonebook.hpp"
 
-bool Contact::is_valid()
+std::string Contact::format_char(std::string str)
+{
+    if (str.length() > 10)
+        return (str.substr(0,9) + '.');
+    return str;
+}
+
+void Contact::setValue(std::string phone, std::string secret)
+{
+    phone_number = phone;
+    darkest_secret = secret;
+}
+
+std::string Contact::getPhoneNumber(void)
+{
+    return phone_number;
+}
+        
+std::string Contact::getDarkestSecret(void)
+{
+    return darkest_secret;
+}
+
+bool Contact::is_valid(void)
 {
     return !first_name.empty() && !last_name.empty() &&
            !nickname.empty() && !phone_number.empty() && 
@@ -15,7 +38,7 @@ void Contact::display_contacts(int index)
             << std::right << std::setw(10) << format_char(nickname) << std::endl;
 }
 
-void Contact::display_detail()
+void Contact::display_detail(void)
 {
     std::cout << "First Name     : " << first_name << std::endl;
     std::cout << "Last Name      : " << last_name << std::endl;
@@ -37,8 +60,13 @@ void PhoneBook::add_Contact(Contact entry)
         count++;
 }
 
-void PhoneBook::display_AllContacts()
+bool PhoneBook::display_AllContacts(void)
 {
+    if (count == 0)
+    {
+        std::cout << "Empty Phonebook: Nothing to display" << std::endl;
+        return (false);
+    }
     std::cout << "Index      | First Name | Last Name  | Nickname  " << std::endl;
     std::cout << "-------------------------------------------------" << std::endl;
     int i = 0;
@@ -47,14 +75,28 @@ void PhoneBook::display_AllContacts()
         contacts[i].display_contacts(i);
         ++i;
     }
+    return (true);
 }
 
-void PhoneBook::display_SingleDetail(int user_index)
+void PhoneBook::display_SingleDetail(void)
 {
-    if (user_index < 0 || user_index >= count)
+    int user_index;
+    std::cout << "Enter contact index: ";
+    if (!(std::cin >> user_index))
     {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cerr << "Invalid Index." << std::endl;
         return;
     }
+    if (user_index < 0 || user_index >= count)
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cerr << "Index out of range." << std::endl;
+        return;
+    }
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     contacts[user_index].display_detail();
 }

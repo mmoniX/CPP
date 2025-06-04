@@ -10,26 +10,17 @@ class Contact
     private:
         std::string phone_number;
         std::string darkest_secret;
-        std::string format_char(std::string str)
-        {
-            if (str.length() > 10)
-                return (str.substr(0,9) + '.');
-            return str;
-        }
+        std::string format_char(std::string str);
     public:
         std::string first_name;
         std::string last_name;
         std::string nickname;
-        void setValue(std::string phone, std::string secret)
-        {
-            phone_number = phone;
-            darkest_secret = secret;
-        }
-        std::string getPhoneNumber() { return phone_number; }
-        std::string getDarkestSecret() { return darkest_secret; }
+        void setValue(std::string phone, std::string secret);
+        std::string getPhoneNumber(void);
+        std::string getDarkestSecret(void);
         void display_contacts(int index);
-        void display_detail();
-        bool is_valid();
+        void display_detail(void);
+        bool is_valid(void);
 };
 
 class PhoneBook
@@ -41,8 +32,8 @@ class PhoneBook
     public:
         PhoneBook() : index(0), count(0) {}
         void add_Contact(Contact entry);
-        void display_AllContacts();
-        void display_SingleDetail(int user_index);
+        bool display_AllContacts(void);
+        void display_SingleDetail(void);
 };
 
 #endif
