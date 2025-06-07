@@ -1,8 +1,8 @@
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 VAL = valgrind --leak-check=full --track-origins=yes
-SRC = Account.cpp tests.cpp
-NAME = account
+SRC = main.cpp
+NAME = $(notdir $(CURDIR))
 
 all: $(NAME)
 

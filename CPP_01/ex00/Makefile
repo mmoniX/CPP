@@ -2,7 +2,7 @@ CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 VAL = valgrind --leak-check=full --track-origins=yes
 SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
-NAME = zombie
+NAME = $(notdir $(CURDIR))
 
 all: $(NAME)
 
