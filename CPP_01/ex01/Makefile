@@ -1,5 +1,5 @@
 CC = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++17
 VAL = valgrind --leak-check=full --track-origins=yes
 SRC = main.cpp Zombie.cpp zombieHorde.cpp
 NAME = $(notdir $(CURDIR))
