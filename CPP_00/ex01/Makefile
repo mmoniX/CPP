@@ -1,7 +1,7 @@
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++17
 VAL = valgrind --leak-check=full --track-origins=yes
-SRC = main.cpp utils.cpp
+SRC = main.cpp Contact.cpp PhoneBook.cpp
 NAME = phonebook
 
 all: $(NAME)
