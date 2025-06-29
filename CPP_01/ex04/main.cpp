@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <filesystem>
 
 int main(int ac, char **av)
 {
@@ -11,13 +12,18 @@ int main(int ac, char **av)
     std::string filename = av[1];
     std::string s1 = av[2];
     std::string s2 = av[3];
+	if(!std::filesystem::exists(av[1]) || !std::filesystem::file_size(av[1]))
+    {
+        std::cerr << "Error: file doesn't exist or is empty" << std::endl;
+        return (1);
+    }
     std::ifstream inputFile(filename); //to read
-    std::ofstream outputFile(filename + ".replace"); //to create & write
     if(!inputFile.is_open())
     {
         std::cerr << "Error: unable to open " << filename << std::endl;
         return (1);
     }
+    std::ofstream outputFile(filename + ".replace"); //to create & write
     if(!outputFile.is_open())
     {
         std::cerr << "Error: unable to open " << filename << ".replace" << std::endl;

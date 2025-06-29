@@ -1,5 +1,6 @@
 #ifndef Zombie_HPP
 # define Zombie_HPP
+
 # include <iostream>
 
 class Zombie
@@ -12,6 +13,6 @@ class Zombie
         void announce( void );
         void setName( std::string zname );
 };
-Zombie* zombieHorde( int N, std::string name );
+Zombie* zombieHorde( int N, std::string hname );
 
 #endif
