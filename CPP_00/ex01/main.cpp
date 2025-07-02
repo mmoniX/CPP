@@ -8,6 +8,8 @@ int main(void)
     {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
         std::getline(std::cin, command);
+		if (std::cin.eof())
+			break ;
         if (command == "ADD")
         {
             Contact entry;
