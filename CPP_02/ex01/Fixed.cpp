@@ -12,9 +12,10 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed( void )
 {
 	std::cout << "Default constructor called" << std::endl;
+	number = 0;
 }
 
 Fixed::Fixed( const int value )
@@ -25,7 +26,6 @@ Fixed::Fixed( const int value )
 
 Fixed::Fixed( const float value )
 {
-	// number = roundf(value * pow(2, 8));
 	number = roundf(value * (1 << bits));
 	std::cout << "Float constructor called" << std::endl;
 };
