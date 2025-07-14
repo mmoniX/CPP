@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 13:38:03 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/06 14:25:59 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/13 15:07:21 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,19 @@
 If all cross product have the same sign, the point is inside
 If any cross product is zero, the point is on the edge
 If signs differ, the point is outside
+
+1.Compute vectors for each edge:
+Edge AB: AB = B - A
+Edge BC: BC = C - B
+Edge CA: CA = A - C
+2.Compute vectors from vertices to point P:
+AP = P - A
+BP = P - B
+CP = P - C
+3.Calculate cross products (2D pseudo-cross product):
+d1 = AB × AP = (B.x - A.x)(P.y - A.y) - (B.y - A.y)(P.x - A.x)
+d2 = BC × BP = (C.x - B.x)(P.y - B.y) - (C.y - B.y)(P.x - B.x)
+d3 = CA × CP = (A.x - C.x)(P.y - C.y) - (A.y - C.y)(P.x - C.x)
 */
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
