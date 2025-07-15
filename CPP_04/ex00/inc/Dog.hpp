@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 14:15:09 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/15 12:41:50 by mmonika          ###   ########.fr       */
+/*   Created: 2025/07/15 12:44:20 by mmonika           #+#    #+#             */
+/*   Updated: 2025/07/15 12:44:22 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/Animal.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-int main( void )
+# include <iostream>
+
+class Animal
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	protected:
+		std::string type;
+};
 
-	return (0);
-}
+#endif
