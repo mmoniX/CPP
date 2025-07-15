@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:36:49 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/15 14:10:09 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/15 17:43:37 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Animal &Animal::operator=( const Animal &obj)
 
 Animal::~Animal()
 {
-	std::cout << "Animal: destructor called for " << type << std::endl;
+	std::cout << "Animal: destructor called" << std::endl;
 }
 
 std::string Animal::getType( void ) const

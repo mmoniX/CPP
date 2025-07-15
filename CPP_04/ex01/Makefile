@@ -1,7 +1,7 @@
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++17
 VAL = valgrind --leak-check=full --track-origins=yes
-SRC = main.cpp src/Animal.cpp src/Cat.cpp src/Dog.cpp
+SRC = main.cpp src/Animal.cpp src/Cat.cpp src/Dog.cpp src/Brain.cpp
 OBJ_DIR = obj
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 NAME = $(notdir $(CURDIR))

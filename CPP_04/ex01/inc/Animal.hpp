@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:36:43 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/15 14:59:59 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/15 17:41:13 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ class Animal
 		std::string type;
 	public:
 		Animal( void );
-		Animal( std::string atype);
-		Animal( const Animal &obj);
-		Animal &operator=( const Animal &obj);
+		Animal( std::string atype );
+		Animal( const Animal &obj );
+		Animal &operator=( const Animal &obj );
 		virtual ~Animal();
-		virtual std::string getType( void ) const;
+
+		std::string getType( void ) const;
 		virtual void makeSound( void ) const;
 };
 

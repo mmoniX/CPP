@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:44:14 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/15 14:39:48 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/15 16:58:05 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class Cat : public Animal
 {
 	public:
 		Cat( void );
-		Cat( std::string ctype);
-		Cat( const Cat &obj);
-		Cat &operator=( const Cat &obj);
+		Cat( std::string ctype );
+		Cat( const Cat &obj );
+		Cat &operator=( const Cat &obj );
 		~Cat();
 		void makeSound( void ) const;
 };
