@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:50:55 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/06 14:24:57 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/15 15:29:51 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,9 +126,9 @@ Fixed Fixed::operator/( const Fixed &other )
 	if (other.number == 0)
 	{
 		std::cerr << "can't divided by ZERO" << std::endl;
-		return(NAN);
+		return (NAN);
 	}
-	res.number = this->number / other.number;
+	res.number = (this->number << bits) / other.number;
 	return (res);
 }
 
