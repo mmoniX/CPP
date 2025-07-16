@@ -1,31 +1,31 @@
 # CPP
 
-### CPP00
+### CPP_00
 This is the first module of C++, it is all about Namespaces, classes, member functions stdio streams, initialization lists, static, const, and some other basic stuff.
 
-### CPP01
+### CPP_01
 This module is about memory allocation, pointers to members, references and switch statement.
 
-### CPP02
+### CPP_02
 This module is about ad-hoc polymorphism, operator overloading and Orthodox Canonical class form.
 
-### CPP03
+### CPP_03
 This module is all about Inheritance.
 
-### CPP04
+### CPP_04
 This modul is about subtype polymorphism, abstract classes and interfaces.
 
-### CPP05
+### CPP_05
 This module is about to understand Try/Catch and Exceptions.
 
-### CPP06
+### CPP_06
 This module is about the different cast types in CPP.
 
-### CPP07
+### CPP_07
 This module is about Templates in CPP.
 
-### CPP08
+### CPP_08
 This module is about templated containers, iterators and algorithms in CPP.
 
-### CPP09
+### CPP_09
 This module is designed to understand the containers in CPP.

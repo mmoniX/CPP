@@ -2,11 +2,11 @@
 
 int main(void)
 {
-    Zombie zom("Foo"); //stack allocation (automatic by destructor)
+    Zombie zom("STACK");
     zom.announce();
-    Zombie* zoomb = newZombie("XYZ"); //heap allocation (delete by user)
+    Zombie* zoomb = newZombie("HEAP");
     zoomb->announce();
     delete zoomb;
-    randomChump("random"); //temporary (automatic at the end of function)
+    randomChump("TEMP");
     return (0);
 }
