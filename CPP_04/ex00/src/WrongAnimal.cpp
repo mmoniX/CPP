@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 12:45:51 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/16 12:47:57 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/16 17:32:26 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ WrongAnimal::WrongAnimal( const WrongAnimal &obj) : type(obj.type)
 WrongAnimal &WrongAnimal::operator=( const WrongAnimal &obj)
 {
 	if (this != &obj)
-	{
 		this->type = obj.type;
-	}
 	std::cout << "WrongAnimal: copy assignment operator created" << std::endl;
 	return *this;
 }

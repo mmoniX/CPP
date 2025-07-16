@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:15:09 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/16 13:13:47 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/16 17:33:04 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,12 @@ int main( void )
 	std::cout << "\n---Creating wrong animals---\n" << std::endl;
 	const WrongAnimal* wa = new WrongAnimal();
 	const WrongAnimal* wi = new WrongCat();
+
 	std::cout << wi->getType() << " " << std::endl;
+
 	wi->makeSound();
 	wa->makeSound();
+
 	delete wi;
 	delete wa;
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 14:00:20 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/15 17:36:27 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/16 17:32:18 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ Dog::Dog( const Dog &obj ) : Animal( obj )
 Dog &Dog::operator=( const Dog &obj )
 {
 	if (this != &obj)
-	{
 		this->type = obj.type;
-	}
 	std::cout << "Dog: copy assignment operator created" << std::endl;
 	return *this;
 }

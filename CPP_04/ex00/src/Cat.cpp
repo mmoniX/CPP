@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 13:53:27 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/15 17:35:52 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/16 17:32:06 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ Cat::Cat( const Cat &obj ) : Animal( obj )
 Cat &Cat::operator=( const Cat &obj )
 {
 	if (this != &obj)
-	{
 		this->type = obj.type;
-	}
 	std::cout << "Cat: copy assignment operator created" << std::endl;
 	return *this;
 }

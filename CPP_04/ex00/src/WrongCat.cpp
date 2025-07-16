@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 12:46:09 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/16 12:50:32 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/16 17:32:35 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ WrongCat::WrongCat( const WrongCat &obj ) : WrongAnimal( obj )
 WrongCat &WrongCat::operator=( const WrongCat &obj )
 {
 	if (this != &obj)
-	{
 		this->type = obj.type;
-	}
 	std::cout << "WrongCat: copy assignment operator created" << std::endl;
 	return *this;
 }
