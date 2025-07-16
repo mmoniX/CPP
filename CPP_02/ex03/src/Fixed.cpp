@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Fixed.cpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 13:37:46 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/16 14:06:47 by mmonika          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../inc/Fixed.hpp"
 
 Fixed::Fixed( void ) : number(0) {}
@@ -111,7 +99,12 @@ Fixed Fixed::operator*( const Fixed &other )
 Fixed Fixed::operator/( const Fixed &other )
 {
 	Fixed res;
-	res.number = this->number / other.number;
+	if (other.number == 0)
+	{
+		std::cerr << "can't divided by ZERO" << std::endl;
+		return (NAN);
+	}
+	res.number = (this->number << bits) / other.number;
 	return (res);
 }
 

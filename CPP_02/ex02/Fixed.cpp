@@ -1,21 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Fixed.cpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/02 14:50:55 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/15 15:29:51 by mmonika          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Fixed.hpp"
 
-Fixed::Fixed( void )
+Fixed::Fixed( void ) : number(0)
 {
 	// std::cout << "Default constructor called" << std::endl;
-	number = 0;
 }
 
 Fixed::~Fixed ()
