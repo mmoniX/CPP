@@ -6,11 +6,11 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 13:38:03 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/13 15:07:21 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/16 14:06:31 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "../inc/Point.hpp"
 #include <cmath>
 
 /*

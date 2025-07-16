@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 13:38:13 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/16 14:07:21 by mmonika          ###   ########.fr       */
+/*   Created: 2025/07/16 12:40:33 by mmonika           #+#    #+#             */
+/*   Updated: 2025/07/16 12:42:15 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/Point.hpp"
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+# include <iostream>
 
-int main ( void )
+class WrongAnimal
 {
-	Point a(0, 0);
-	Point b(5, 0);
-	Point c(0, 5);
-	Point value(3, 1.5);
+	protected:
+		std::string type;
+	public:
+		WrongAnimal( void );
+		WrongAnimal( std::string atype );
+		WrongAnimal( const WrongAnimal &obj );
+		WrongAnimal &operator=( const WrongAnimal &obj );
+		virtual ~WrongAnimal();
 
-	if (bsp(a, b, c, value) == true)
-		std::cout << "Point is INSIDE the triangle" << std::endl;
-	else
-		std::cout << "Point is OUTSIDE the triangle" <<std::endl;
+		std::string getType( void ) const;
+		virtual void makeSound( void ) const;
+};
 
-	return (0);
-}
+#endif

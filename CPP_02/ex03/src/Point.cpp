@@ -6,11 +6,11 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 13:38:55 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/06 14:34:58 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/16 14:07:04 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "../inc/Point.hpp"
 
 Point::Point( void ) : x(0), y(0) {}
 

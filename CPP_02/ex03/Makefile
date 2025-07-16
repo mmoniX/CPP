@@ -1,7 +1,7 @@
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++17
 VAL = valgrind --leak-check=full --track-origins=yes
-SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRC = main.cpp src/Fixed.cpp src/Point.cpp src/bsp.cpp
 NAME = $(notdir $(CURDIR))
 
 all: $(NAME)

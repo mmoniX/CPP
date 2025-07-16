@@ -6,11 +6,11 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 13:37:46 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/06 14:35:51 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/16 14:06:47 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../inc/Fixed.hpp"
 
 Fixed::Fixed( void ) : number(0) {}
 
