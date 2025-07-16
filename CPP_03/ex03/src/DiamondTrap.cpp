@@ -1,34 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/09 18:34:04 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/14 12:55:49 by mmonika          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "DiamondTrap.hpp"
+#include "../inc/DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap( void ) : ClapTrap()
 {
 	name = "DIAMOND";
-	hit = FragTrap::getHitpoint();
+	// hit = FragTrap::getHitpoint();
 	ScavTrap temp;
 	energy = temp.getEnergypoint();
-	damage = FragTrap::getAttackpoint();
+	// damage = FragTrap::getAttackpoint();
 	std::cout << "DiamondTrap: default constructor called for " << name << std::endl;
 }
 
 DiamondTrap::DiamondTrap( std::string dname ) : ClapTrap(dname + "_clap_name")
 {
 	name = dname;
-	hit = FragTrap::getHitpoint();
+	// hit = FragTrap::getHitpoint();
 	ScavTrap temp;
 	energy = temp.getEnergypoint();
-	damage = FragTrap::getAttackpoint();
+	// damage = FragTrap::getAttackpoint();
 	std::cout << "DiamondTrap: constructor called for " << dname << std::endl;
 }
 
