@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:15:09 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/16 17:33:04 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/19 13:58:37 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,17 @@ int main( void )
 {
 	std::cout << "\n---Creating animals---\n" << std::endl;
 	const Animal* meta = new Animal();
+	const Animal random;
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
 	std::cout << "Type: " << meta->getType() << std::endl;
+	std::cout << "Type: " << random.getType() << std::endl;
 	std::cout << "Type: " << j->getType() << std::endl;
 	std::cout << "Type: " << i->getType() << std::endl;
 
 	meta->makeSound();
+	random.makeSound();
 	j->makeSound();
 	i->makeSound();
 

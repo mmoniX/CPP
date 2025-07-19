@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 16:08:47 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/16 18:45:06 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/19 13:28:54 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main( void )
 	Dog dog3;
 	Dog dog2(*dog1);
 
-	dog1->getBrain();
+	dog1->getBrain()->setIdea("what is this hooman doing!!!!");
 	dog3 = *dog1;
 	std::cout << "dog1 idea: " << dog1->getBrain()->getIdea() << std::endl;
 	std::cout << "dog2 idea: " << dog2.getBrain()->getIdea() << std::endl;

@@ -6,27 +6,27 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 14:00:20 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/16 18:25:05 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/19 13:10:54 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Dog.hpp"
 
-Dog::Dog( void ) : Animal()
+Dog::Dog( void ) : A_Animal()
 {
 	type = "Dog";
 	dogbrain = new Brain();
 	std::cout << "Dog: default constructor created" << std::endl; 
 }
 
-Dog::Dog( std::string dtype ) : Animal(dtype)
+Dog::Dog( std::string dtype ) : A_Animal(dtype)
 {
 	type = dtype;
 	dogbrain = new Brain();
 	std::cout << "Dog: constructor created with type: " << dtype << std::endl;
 }
 
-Dog::Dog( const Dog &obj ) : Animal( obj )
+Dog::Dog( const Dog &obj ) : A_Animal( obj )
 {
 	// *this = obj;
 	dogbrain = new Brain(*obj.dogbrain);
@@ -36,7 +36,7 @@ Dog &Dog::operator=( const Dog &obj )
 {
 	if (this != &obj)
 	{
-		Animal::operator=(obj);
+		A_Animal::operator=(obj);
 		if (dogbrain)
 			delete dogbrain;
 		dogbrain = new Brain(*obj.dogbrain);

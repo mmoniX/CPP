@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:13:46 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/15 18:38:21 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/19 12:50:19 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ Brain::Brain( void )
 	std::cout << "Brain: default constructor created" << std::endl; 
 }
 
-Brain::Brain( std::string idea)
+Brain::Brain( std::string idea )
 {
 	for (int i = 0; i < 100; i++)
 		ideas[i] = idea;
 	std::cout << "Brain: constructor created with type: " << idea << std::endl;
 }
 
-Brain::Brain( const Brain &obj)
+Brain::Brain( const Brain &obj )
 {
 	for (int i = 0; i < 100; i++)
 		ideas[i] = obj.ideas[i];
 	std::cout << "Brain: copy constructor created" << std::endl;
 }
 
-Brain &Brain::operator=( const Brain &obj)
+Brain &Brain::operator=( const Brain &obj )
 {
 	if (this != &obj)
 	{
@@ -47,6 +47,11 @@ Brain &Brain::operator=( const Brain &obj)
 Brain::~Brain()
 {
 	std::cout << "Brain: destructor called" << std::endl;
+}
+
+void Brain::setIdea( const std::string &idea )
+{
+	ideas[0] = idea;
 }
 
 std::string Brain::getIdea( void )

@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:44:14 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/16 18:05:13 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/19 13:09:49 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public A_Animal
 {
 	private:
 		Brain* catbrain;
