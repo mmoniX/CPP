@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 13:11:09 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/19 13:56:21 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/19 18:04:58 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 // int main( void )
 // {
 // 	std::cout << "\n---Basic Tests---\n" << std::endl;
-// 	const A_Animal* j = new Dog();
-// 	const A_Animal* i = new Cat();
+// 	const AAnimal* j = new Dog();
+// 	const AAnimal* i = new Cat();
 // 	delete j;
 // 	delete i;
 
 // 	std::cout << "\n---Array Tests---\n" << std::endl;
-// 	A_Animal	*animals[SIZE];
+// 	AAnimal	*animals[SIZE];
 // 	for(int a = 0; a < SIZE/2; a++)
 // 		animals[a] = new Dog();
 // 	for(int a = SIZE/2; a < SIZE; a++)
@@ -51,9 +51,9 @@
 int main( void )
 {
 	std::cout << "\n---Creating animals---\n" << std::endl;
-	// const A_Animal* meta = new A_Animal();
-	const A_Animal* j = new Dog();
-	const A_Animal* i = new Cat();
+	// const AAnimal* meta = new AAnimal();
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
 
 	// std::cout << "Type: " << meta->getType() << std::endl;
 	std::cout << "Type: " << j->getType() << std::endl;

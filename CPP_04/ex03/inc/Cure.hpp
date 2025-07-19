@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 12:44:20 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/19 18:03:48 by mmonika          ###   ########.fr       */
+/*   Created: 2025/07/19 15:18:10 by mmonika           #+#    #+#             */
+/*   Updated: 2025/07/19 18:01:56 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include <iostream>
+# include "Materia.hpp"
+# include "Character.hpp"
 
-class Dog : public AAnimal
+class Cure : public AMateria
 {
-	private:
-		Brain* dogbrain;
 	public:
-		Dog( void );
-		Dog( std::string dtype );
-		Dog( const Dog &obj );
-		Dog &operator=( const Dog &obj );
-		~Dog();
-		void makeSound( void ) const;
-		Brain *getBrain( void );
+		Cure( void );
+		Cure(std::string const &type);
+		Cure(const Cure &obj);
+		Cure &operator=(const Cure &obj);
+		virtual ~Cure();
+
+		virtual AMateria *clone() const;
+		void use( ICharacter& target );	
 };
 
 #endif

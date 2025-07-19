@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 12:44:20 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/19 18:03:48 by mmonika          ###   ########.fr       */
+/*   Created: 2025/07/19 14:22:55 by mmonika           #+#    #+#             */
+/*   Updated: 2025/07/19 16:30:35 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#include "../inc/MateriaSource.hpp"
 
-# include "Animal.hpp"
-# include "Brain.hpp"
-
-class Dog : public AAnimal
+IMateriaSource::~IMateriaSource()
 {
-	private:
-		Brain* dogbrain;
-	public:
-		Dog( void );
-		Dog( std::string dtype );
-		Dog( const Dog &obj );
-		Dog &operator=( const Dog &obj );
-		~Dog();
-		void makeSound( void ) const;
-		Brain *getBrain( void );
-};
-
-#endif
+	std::cout << "IMateriaSource: destructor called" << std::endl;
+}

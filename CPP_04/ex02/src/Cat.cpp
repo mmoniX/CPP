@@ -6,27 +6,27 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 13:53:27 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/19 13:10:29 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/19 18:04:36 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Cat.hpp"
 
-Cat::Cat( void ) : A_Animal()
+Cat::Cat( void ) : AAnimal()
 {
 	type = "Cat";
 	catbrain = new Brain();
 	std::cout << "Cat: default constructor created" << std::endl; 
 }
 
-Cat::Cat( std::string ctype ) : A_Animal(ctype)
+Cat::Cat( std::string ctype ) : AAnimal(ctype)
 {
 	type = ctype;
 	catbrain = new Brain();
 	std::cout << "Cat: constructor created with type: " << ctype << std::endl;
 }
 
-Cat::Cat( const Cat &obj ) : A_Animal( obj )
+Cat::Cat( const Cat &obj ) : AAnimal( obj )
 {
 	// *this = obj;
 	catbrain = new Brain(*obj.catbrain); //deep copy ???
@@ -37,7 +37,7 @@ Cat &Cat::operator=( const Cat &obj )
 {
 	if (this != &obj)
 	{
-		A_Animal::operator=(obj);
+		AAnimal::operator=(obj);
 		if (catbrain)
 			delete catbrain;
 		catbrain = new Brain(*obj.catbrain);

@@ -6,40 +6,40 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:36:49 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/19 14:02:14 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/19 18:04:21 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Animal.hpp"
 
-A_Animal::A_Animal( void ) : type("Unknown")
+AAnimal::AAnimal( void ) : type("Unknown")
 {
-	std::cout << "A_Animal: default constructor created" << std::endl; 
+	std::cout << "AAnimal: default constructor created" << std::endl; 
 }
 
-A_Animal::A_Animal( std::string atype) : type(atype)
+AAnimal::AAnimal( std::string atype) : type(atype)
 {
-	std::cout << "A_Animal: constructor created with type: " << atype << std::endl;
+	std::cout << "AAnimal: constructor created with type: " << atype << std::endl;
 }
 
-A_Animal::A_Animal( const A_Animal &obj) : type(obj.type)
+AAnimal::AAnimal( const AAnimal &obj) : type(obj.type)
 {
-	std::cout << "A_Animal: copy constructor created" << std::endl;
+	std::cout << "AAnimal: copy constructor created" << std::endl;
 }
-A_Animal &A_Animal::operator=( const A_Animal &obj)
+AAnimal &AAnimal::operator=( const AAnimal &obj)
 {
 	if (this != &obj)
 		this->type = obj.type;
-	std::cout << "A_Animal: copy assignment operator created" << std::endl;
+	std::cout << "AAnimal: copy assignment operator created" << std::endl;
 	return *this;
 }
 
-A_Animal::~A_Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << "A_Animal: destructor called" << std::endl;
+	std::cout << "AAnimal: destructor called" << std::endl;
 }
 
-std::string A_Animal::getType( void ) const
+std::string AAnimal::getType( void ) const
 {
 	return type;
 }
