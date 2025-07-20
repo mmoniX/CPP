@@ -6,41 +6,38 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:22:47 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/19 16:47:12 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/20 18:44:03 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Materia.hpp"
 
-AMateria::AMateria( void )
+AMateria::AMateria( void ) : type("DEF")
 {
-	this->type = "DEF";
-	std::cout << "AMateria: default constructor created" << std::endl;
+	// std::cout << "AMateria: default constructor created" << std::endl;
 }
 
-AMateria::AMateria( std::string const & type )
+AMateria::AMateria( std::string const & type ) : type(type)
 {
-	this->type = type;
-	std::cout << "AMateria: constructor created" << std::endl;
+	// std::cout << "AMateria: constructor created" << std::endl;
 }
 
-AMateria::AMateria( const AMateria &obj )
+AMateria::AMateria( const AMateria &obj ) : type(obj.type)
 {
-	this->type = obj.type;
-	std::cout << "AMateria: copy constructor created" << std::endl;
+	// std::cout << "AMateria: copy constructor created" << std::endl;
 }
 
 AMateria &AMateria::operator=( const AMateria &obj )
 {
 	if (this != &obj)
 		this->type = obj.type;
-	std::cout << "AMateria: copy assignment operator created" << std::endl;
+	// std::cout << "AMateria: copy assignment operator created" << std::endl;
 	return *this;
 }
 
 AMateria::~AMateria()
 {
-	std::cout << "AMateria: destructor called" << std::endl;
+	// std::cout << "AMateria: destructor called" << std::endl;
 }
 
 std::string const &AMateria::getType() const

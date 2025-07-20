@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:18:10 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/19 18:01:56 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/20 18:56:38 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <iostream>
 # include "Materia.hpp"
-# include "Character.hpp"
 
 class Cure : public AMateria
 {

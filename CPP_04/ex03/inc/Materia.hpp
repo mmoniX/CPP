@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:05:59 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/19 18:02:24 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/20 18:57:19 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include "Character.hpp"
+
+class ICharacter;
 
 class AMateria
 {

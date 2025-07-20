@@ -6,15 +6,14 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:19:33 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/19 17:11:54 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/20 17:44:56 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/Materia.hpp"
-#include "inc/Character.hpp"
 #include "inc/MateriaSource.hpp"
-#include "inc/Ice.hpp"
+#include "inc/Character.hpp"
 #include "inc/Cure.hpp"
+#include "inc/Ice.hpp"
 
 int main( void )
 {

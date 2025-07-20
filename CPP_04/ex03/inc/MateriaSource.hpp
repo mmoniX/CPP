@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:17:24 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/19 18:07:22 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/20 18:57:28 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,21 @@ class IMateriaSource
 	public:
 		virtual ~IMateriaSource() {}
 		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
+		virtual AMateria* createMateria(std::string const &type) = 0;
 };
 
-class MateriaSource
+class MateriaSource : public IMateriaSource
 {
 	private:
+		AMateria* templates[4];
 	public:
-		// virtual ~IMateriaSource() {}
-		// virtual void learnMateria(AMateria*) = 0;
-		// virtual AMateria* createMateria(std::string const & type) = 0;
+		MateriaSource( void );
+		MateriaSource( const MateriaSource &obj );
+		MateriaSource &operator=( const MateriaSource &obj );
+		~MateriaSource();
+
+		void learnMateria( AMateria* m);
+		AMateria* createMateria( std::string const &type );
 };
 
 #endif

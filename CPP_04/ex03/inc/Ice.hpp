@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:18:03 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/19 18:02:12 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/20 18:56:44 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <iostream>
 # include "Materia.hpp"
-# include "Character.hpp"
 
 class Ice : public AMateria
 {

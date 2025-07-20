@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 13:53:27 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/16 18:25:12 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/20 18:34:21 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ Cat::Cat( std::string ctype ) : Animal(ctype)
 
 Cat::Cat( const Cat &obj ) : Animal( obj )
 {
-	// *this = obj;
-	catbrain = new Brain(*obj.catbrain); //deep copy ???
+	catbrain = new Brain(*obj.catbrain);
 	std::cout << "Cat: copy constructor created" << std::endl;
 }
 
@@ -41,7 +40,6 @@ Cat &Cat::operator=( const Cat &obj )
 		if (catbrain)
 			delete catbrain;
 		catbrain = new Brain(*obj.catbrain);
-		// this->type = obj.type;
 	}
 	std::cout << "Cat: copy assignment operator created" << std::endl;
 	return *this;

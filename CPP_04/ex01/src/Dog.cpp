@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 14:00:20 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/16 18:25:05 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/20 18:34:43 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ Dog::Dog( std::string dtype ) : Animal(dtype)
 
 Dog::Dog( const Dog &obj ) : Animal( obj )
 {
-	// *this = obj;
 	dogbrain = new Brain(*obj.dogbrain);
 	std::cout << "Dog: copy constructor created" << std::endl;
 }
@@ -40,7 +39,6 @@ Dog &Dog::operator=( const Dog &obj )
 		if (dogbrain)
 			delete dogbrain;
 		dogbrain = new Brain(*obj.dogbrain);
-		// this->type = obj.type;
 	}
 	std::cout << "Dog: copy assignment operator created" << std::endl;
 	return *this;

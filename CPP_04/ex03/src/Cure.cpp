@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 16:22:43 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/19 16:40:16 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/20 18:43:23 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,33 @@
 
 Cure::Cure( void ) : AMateria()
 {
-	this->type = "Cure";
-	std::cout << "Cure: default constructor created" << std::endl;
+	this->type = "cure";
+	// std::cout << "Cure: default constructor created" << std::endl;
 }
 
 Cure::Cure(std::string const &type) : AMateria(type)
 {
 	this->type = type;
-	std::cout << "Cure: default constructor created" << std::endl;
+	// std::cout << "Cure: default constructor created" << std::endl;
 }
 
 Cure::Cure(const Cure &obj) : AMateria(obj)
 {
 	this->type = obj.type;
-	std::cout << "Cure: copy constructor created" << std::endl;
+	// std::cout << "Cure: copy constructor created" << std::endl;
 }
 
 Cure &Cure::operator=(const Cure &obj)
 {
 	if (this != &obj)
 		this->type = obj.type;
-	std::cout << "Cure: copy assignment operator created" << std::endl;
+	// std::cout << "Cure: copy assignment operator created" << std::endl;
 	return *this;
 }
 
 Cure::~Cure()
 {
-	std::cout << "AMateria: destructor called" << std::endl;
+	// std::cout << "Cure: destructor called" << std::endl;
 }
 
 AMateria *Cure::clone() const
