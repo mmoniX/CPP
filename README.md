@@ -18,7 +18,7 @@ This modul is about subtype polymorphism, abstract classes and interfaces.
 ### CPP_05
 This module is about to understand Try/Catch and Exceptions.
 
-### CPP_06
+### CPP_06
 This module is about the different cast types in CPP.
 
 ### CPP_07
