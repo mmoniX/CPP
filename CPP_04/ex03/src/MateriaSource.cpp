@@ -12,23 +12,16 @@
 
 #include "../inc/MateriaSource.hpp"
 
-// IMateriaSource::~IMateriaSource()
-// {
-// 	std::cout << "IMateriaSource: destructor called" << std::endl;
-// }
-
 MateriaSource::MateriaSource( void )
 {
 	for (int i = 0; i < 4; i++)
 		templates[i] = NULL;
-	// std::cout << "MS: default constructor called" << std::endl;
 }
 
 MateriaSource::MateriaSource( const MateriaSource &obj )
 {
 	for (int i = 0; i < 4; i++)
 		templates[i] = obj.templates[i] ? obj.templates[i]->clone() : NULL;
-	// std::cout << "MS: copy constructor called" << std::endl;
 }
 
 MateriaSource &MateriaSource::operator=( const MateriaSource &obj )
@@ -36,19 +29,25 @@ MateriaSource &MateriaSource::operator=( const MateriaSource &obj )
 	if (this != &obj)
 	{
 		for (int i = 0; i < 4; i++)
-			delete templates[i];
+		{
+			if (templates[i])
+				delete templates[i];
+			templates[i] = NULL;
+		}
 		for (int i = 0; i < 4; i++)
 			templates[i] = obj.templates[i] ? obj.templates[i]->clone() : NULL;
 	}
 	return *this;
-	// std::cout << "MS: copy assignment operator called" << std::endl;
 }
 
 MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
-		delete templates[i];
-	// std::cout << "MS: destructor called" << std::endl;
+	{
+		if (templates[i])
+			delete templates[i];
+		templates[i] = NULL;
+	}
 }
 
 void MateriaSource::learnMateria( AMateria* m)
@@ -60,6 +59,7 @@ void MateriaSource::learnMateria( AMateria* m)
 		if (templates[i] == NULL)
 		{
 			templates[i] = m->clone();
+			delete m;
 			return;
 		}
 	}

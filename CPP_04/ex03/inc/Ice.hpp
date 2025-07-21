@@ -23,9 +23,9 @@ class Ice : public AMateria
 		Ice(std::string const &type);
 		Ice(const Ice &obj);
 		Ice &operator=(const Ice &obj);
-		virtual ~Ice();
+		~Ice();
 
-		virtual AMateria *clone() const;
+		AMateria *clone() const;
 		void use( ICharacter& target );	
 };
 

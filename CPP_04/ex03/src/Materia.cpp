@@ -12,33 +12,20 @@
 
 #include "../inc/Materia.hpp"
 
-AMateria::AMateria( void ) : type("DEF")
-{
-	// std::cout << "AMateria: default constructor created" << std::endl;
-}
+AMateria::AMateria( void ) : type("DEF") {}
 
-AMateria::AMateria( std::string const & type ) : type(type)
-{
-	// std::cout << "AMateria: constructor created" << std::endl;
-}
+AMateria::AMateria( std::string const & type ) : type(type) {}
 
-AMateria::AMateria( const AMateria &obj ) : type(obj.type)
-{
-	// std::cout << "AMateria: copy constructor created" << std::endl;
-}
+AMateria::AMateria( const AMateria &obj ) : type(obj.type) {}
 
 AMateria &AMateria::operator=( const AMateria &obj )
 {
 	if (this != &obj)
 		this->type = obj.type;
-	// std::cout << "AMateria: copy assignment operator created" << std::endl;
 	return *this;
 }
 
-AMateria::~AMateria()
-{
-	// std::cout << "AMateria: destructor called" << std::endl;
-}
+AMateria::~AMateria() {}
 
 std::string const &AMateria::getType() const
 {

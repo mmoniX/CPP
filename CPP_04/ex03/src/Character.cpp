@@ -12,52 +12,46 @@
 
 #include "../inc/Character.hpp"
 
-// ICharacter::~ICharacter()
-// {
-// 	std::cout << "ICharacter: destructor called" << std::endl;
-// }
-
 Character::Character( void ) : name("ch: def")
 {
 	for (int i = 0; i < 4; i++)
 		inventory[i] = NULL;
-	// std::cout << "Character: default constructor called" << std::endl;
 }
 
 Character::Character( std::string cname ) : name(cname)
 {
 	for (int i = 0; i < 4; i++)
 		inventory[i] = NULL;
-	// std::cout << "Character: constructor called" << std::endl;
 }
 
 Character::Character( const Character &obj ) : name(obj.name)
 {
 	for (int i = 0; i < 4; i++)
 		inventory[i] = obj.inventory[i] ? obj.inventory[i]->clone() : NULL;
-	// std::cout << "Character: copy constructor called" << std::endl;
 }
 
-Character &Character::operator=( const Character &obj )
+Character &Character::operator=( const Character &obj ) //check
 {
 	if (this != &obj)
 	{
 		name = obj.name;
 		for (int i = 0; i < 4; i++)
 		{
-			delete inventory[i];
+			if (inventory[i])
+				delete inventory[i];
 			inventory[i] = obj.inventory[i] ? obj.inventory[i]->clone() : NULL;
 		}
 	}
 	return *this;
-	// std::cout << "Character: copy assignment operator called" << std::endl;
 }
 
 Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
-		delete inventory[i];
-	// std::cout << "Character: destructor called" << std::endl;
+	{
+		if (inventory[i])
+			delete inventory[i];
+	}
 }
 
 std::string const &Character::getName() const
