@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:22:55 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/20 18:44:20 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/21 12:43:07 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ MateriaSource &MateriaSource::operator=( const MateriaSource &obj )
 
 MateriaSource::~MateriaSource()
 {
-	for (int i = -1; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 		delete templates[i];
 	// std::cout << "MS: destructor called" << std::endl;
 }
@@ -55,7 +55,7 @@ void MateriaSource::learnMateria( AMateria* m)
 {
 	if (m == NULL)
 		return;
-	for (int i = -1; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		if (templates[i] == NULL)
 		{

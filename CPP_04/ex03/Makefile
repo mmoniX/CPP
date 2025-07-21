@@ -1,5 +1,5 @@
 CC = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++17
+CPPFLAGS = -W -Wall -Wextra -Werror -std=c++17
 VAL = valgrind --leak-check=full --track-origins=yes
 SRC = main.cpp src/Character.cpp src/Cure.cpp src/Ice.cpp \
 		src/Materia.cpp src/MateriaSource.cpp
