@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 17:20:28 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/27 22:19:44 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/27 23:28:30 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &obj) : name(obj.name), grade(obj.grade)
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 {
     if (this != &obj)
-    {
         grade = obj.grade;
-    }
     return *this;
 }
 
@@ -52,6 +50,20 @@ void Bureaucrat::decrementGrade()
     if (grade >= 150)
         throw Bureaucrat::GradeTooLowException();
     grade++;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+        form.beSigned(*this);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+        return;
+    }
+    std::cout << name << " signed " << form.getName() << std::endl;
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const noexcept

@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 17:20:28 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/27 22:07:36 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/27 23:28:41 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &obj) : name(obj.name), grade(obj.grade)
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 {
     if (this != &obj)
-    {
         grade = obj.grade;
-    }
     return *this;
 }
 
