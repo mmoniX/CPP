@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 17:19:05 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/29 13:03:23 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/29 17:08:53 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main(void)
 		Bureaucrat bob("Bob", 2);
 		std::cout << bob << std::endl;
 		bob.incrementGrade();
-		std::cout << bob << std::endl;
+		std::cout << "After Promotion " << bob << std::endl;
 	} catch(const std::exception& e) {
 		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
@@ -44,7 +44,7 @@ int main(void)
 		Bureaucrat tim("Tim", 149);
 		std::cout << tim << std::endl;
 		tim.decrementGrade();
-		std::cout << tim << std::endl;
+		std::cout << "After Demotion " << tim << std::endl;
 	} catch(const std::exception& e) {
 		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}

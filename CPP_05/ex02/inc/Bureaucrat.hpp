@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:04:47 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/29 15:08:52 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/29 16:20:23 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ class Bureaucrat
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();
+
         void signForm(AForm &aform);
+		void executeForm(AForm const &form) const;
         
         class GradeTooHighException : public std::exception
         {

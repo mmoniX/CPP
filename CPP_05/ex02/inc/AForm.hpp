@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:05:26 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/29 15:06:08 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/29 17:30:46 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class AForm
         AForm(std::string fname, int fsignGrade, int fexecuteGrade);
         AForm(const AForm &obj);
         AForm &operator=(const AForm &obj);
-        ~AForm();
+        virtual ~AForm();
 
         std::string getName() const;
         bool getSigned() const;
@@ -39,6 +39,8 @@ class AForm
         int getExecuteGrade() const;
 
         void beSigned(const Bureaucrat &b);
+		void execute(Bureaucrat const &executor) const;
+		virtual void executeAction() const = 0;
 
         class GradeTooHighException : public std::exception
         {
@@ -47,6 +49,12 @@ class AForm
         };
         
         class GradeTooLowException : public std::exception
+        {
+            public:
+                const char *what() const noexcept override;
+        };
+		
+		class NotSigned : public std::exception
         {
             public:
                 const char *what() const noexcept override;

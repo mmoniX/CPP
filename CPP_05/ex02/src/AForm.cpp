@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:06:50 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/29 15:09:42 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/29 17:31:05 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,34 @@ int AForm::getExecuteGrade() const { return executeGrade; }
 void AForm::beSigned(const Bureaucrat &b)
 {
 	if (isSigned)
-		throw std::runtime_error("AForm is already signed");
+		throw std::runtime_error("Form is already signed");
     if (b.getGrade() > signGrade)
         throw AForm::GradeTooLowException();
 	isSigned = true;
 }
 
+void AForm::execute(Bureaucrat const &executor) const
+{
+	if (!isSigned)
+		throw AForm::NotSigned();
+	if (executor.getGrade() > signGrade)
+		throw AForm::GradeTooLowException();
+	executeAction();
+}
+
 const char *AForm::GradeTooHighException::what() const noexcept
 {
-    return ("AForm grade is too high!");
+    return ("Form grade is too high!");
 }
 
 const char *AForm::GradeTooLowException::what() const noexcept
 {
-	return ("Grade is too low to sign the AForm!");
+	return ("Grade is too low to sign the Form!");
+}
+
+const char *AForm::NotSigned::what() const noexcept
+{
+	return ("Form is not signed.");
 }
 
 std::ostream &operator<<(std::ostream &out, const AForm &obj)
