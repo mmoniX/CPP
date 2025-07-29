@@ -3,25 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 22:21:02 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/27 23:59:03 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/29 15:03:14 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "../inc/Form.hpp"
 
 Form::Form() : name("Default"), isSigned(false), signGrade(42), executeGrade(24) {}
 
 Form::Form(std::string fname, int fsignGrade, int fexecuteGrade)
-    : name(fname), signGrade(fsignGrade), executeGrade(fexecuteGrade)
+    : name(fname), isSigned(false), signGrade(fsignGrade), executeGrade(fexecuteGrade)
 {
     if (fsignGrade < 1 || fexecuteGrade < 1)
         throw Form::GradeTooHighException();
     if (fsignGrade > 150 || fexecuteGrade > 150)
         throw Form::GradeTooLowException();
-    isSigned = false;
 }
 
 Form::Form(const Form &obj) : name(obj.name), isSigned(obj.isSigned), 
@@ -46,9 +45,11 @@ int Form::getExecuteGrade() const { return executeGrade; }
 
 void Form::beSigned(const Bureaucrat &b)
 {
+	if (isSigned)
+		throw std::runtime_error("Form is already signed");
     if (b.getGrade() > signGrade)
         throw Form::GradeTooLowException();
-    isSigned = true;
+	isSigned = true;
 }
 
 const char *Form::GradeTooHighException::what() const noexcept
@@ -58,7 +59,7 @@ const char *Form::GradeTooHighException::what() const noexcept
 
 const char *Form::GradeTooLowException::what() const noexcept
 {
-	return ("Form grade is too low!");
+	return ("Grade is too low to sign the Form!");
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &obj)

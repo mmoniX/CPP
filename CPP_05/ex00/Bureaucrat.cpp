@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 17:20:28 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/27 23:28:41 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/29 15:01:24 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 Bureaucrat::Bureaucrat() : name("Default"), grade(42) {}
 
-Bureaucrat::Bureaucrat(std::string bname, int bgrade) : name(bname)
+Bureaucrat::Bureaucrat(std::string bname, int bgrade) : name(bname), grade(bgrade)
 {
     if (bgrade < 1)
         throw Bureaucrat::GradeTooHighException();
     else if (bgrade > 150)
         throw Bureaucrat::GradeTooLowException();
-    grade = bgrade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &obj) : name(obj.name), grade(obj.grade) {}
@@ -54,12 +53,12 @@ void Bureaucrat::decrementGrade()
 
 const char *Bureaucrat::GradeTooHighException::what() const noexcept
 {
-    return "Grade is too high!";
+    return "Bureaucrat's grade is too high!";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const noexcept
 {
-	return ("Grade is too low!");
+	return ("Bureaucrat's grade is too low!");
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &obj)

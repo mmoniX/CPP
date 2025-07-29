@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 17:20:28 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/27 23:28:30 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/07/29 15:01:07 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 Bureaucrat::Bureaucrat() : name("Default"), grade(42) {}
 
-Bureaucrat::Bureaucrat(std::string bname, int bgrade) : name(bname)
+Bureaucrat::Bureaucrat(std::string bname, int bgrade) : name(bname), grade(bgrade)
 {
     if (bgrade < 1)
         throw Bureaucrat::GradeTooHighException();
     else if (bgrade > 150)
         throw Bureaucrat::GradeTooLowException();
-    grade = bgrade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &obj) : name(obj.name), grade(obj.grade) {}
@@ -54,26 +53,22 @@ void Bureaucrat::decrementGrade()
 
 void Bureaucrat::signForm(Form &form)
 {
-    try
-    {
+    try {
         form.beSigned(*this);
-    }
-    catch(const std::exception& e)
-    {
+		std::cout << name << " signed " << form.getName() << std::endl;
+    } catch(const std::exception& e) {
         std::cerr << name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
-        return;
     }
-    std::cout << name << " signed " << form.getName() << std::endl;
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const noexcept
 {
-    return "Grade is too high!";
+    return "Bureaucrat's grade is too high!";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const noexcept
 {
-	return ("Grade is too low!");
+	return ("Bureaucrat's grade is too low!");
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &obj)
