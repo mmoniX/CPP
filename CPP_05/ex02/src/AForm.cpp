@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:06:50 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/29 17:31:05 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/08/02 11:50:52 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void AForm::beSigned(const Bureaucrat &b)
 	if (isSigned)
 		throw std::runtime_error("Form is already signed");
     if (b.getGrade() > signGrade)
-        throw AForm::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	isSigned = true;
 }
 
@@ -56,7 +56,7 @@ void AForm::execute(Bureaucrat const &executor) const
 {
 	if (!isSigned)
 		throw AForm::NotSigned();
-	if (executor.getGrade() > signGrade)
+	if (executor.getGrade() > executeGrade)
 		throw AForm::GradeTooLowException();
 	executeAction();
 }
