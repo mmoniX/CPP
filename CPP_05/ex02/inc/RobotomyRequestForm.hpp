@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:49:09 by mmonika           #+#    #+#             */
-/*   Updated: 2025/08/02 13:00:52 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/08/02 14:49:09 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ class RobotomyRequestForm : public AForm
 {
 	private:
 		std::string target;
-    public:
+  public:
 		RobotomyRequestForm();
-        RobotomyRequestForm(std::string rtarget);
-        RobotomyRequestForm(const RobotomyRequestForm &obj);
-        RobotomyRequestForm &operator=(const RobotomyRequestForm &obj);
-        ~RobotomyRequestForm();
+    RobotomyRequestForm(std::string rtarget);
+    RobotomyRequestForm(const RobotomyRequestForm &obj);
+    RobotomyRequestForm &operator=(const RobotomyRequestForm &obj);
+    ~RobotomyRequestForm();
 		void executeAction() const;
 };
 

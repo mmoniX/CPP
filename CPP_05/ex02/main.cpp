@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 20:25:31 by mmonika           #+#    #+#             */
-/*   Updated: 2025/08/02 13:27:11 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/08/02 14:15:23 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,26 @@
 #include "inc/ShrubberyCreationForm.hpp"
 #include "inc/RobotomyRequestForm.hpp"
 #include "inc/PresidentialPardonForm.hpp"
+#include "inc/Bureaucrat.hpp"
 
 
 int main() {
     try {
         std::cout << "\n--- Creating Bureaucrats ---\n";
         Bureaucrat bob("Bob", 146);
+        std::cout << bob << std::endl;
         Bureaucrat alice("Alice", 70);
+        std::cout << alice << std::endl;
         Bureaucrat president("President", 1);
+        std::cout << president << std::endl;
 
         std::cout << "\n--- Creating Forms ---\n";
         ShrubberyCreationForm shrub("home");
+        std::cout << shrub << std::endl;
         RobotomyRequestForm robot("Bender");
+        std::cout << robot << std::endl;
         PresidentialPardonForm pardon("Hacker");
+        std::cout << pardon << std::endl;
 
         std::cout << "\n--- Attempt to Sign with Low Grade ---\n";
         bob.signForm(shrub);    // Fail: Bob's grade is 146, needed: 145

@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:22:42 by mmonika           #+#    #+#             */
-/*   Updated: 2025/07/30 20:39:48 by mmonika          ###   ########.fr       */
+/*   Updated: 2025/08/02 14:49:25 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ class ShrubberyCreationForm : public AForm
 {
 	private:
 		std::string target;
-    public:
+  public:
 		ShrubberyCreationForm();
-        ShrubberyCreationForm(std::string starget);
-        ShrubberyCreationForm(const ShrubberyCreationForm &obj);
-        ShrubberyCreationForm &operator=(const ShrubberyCreationForm &obj);
-        ~ShrubberyCreationForm();
+    ShrubberyCreationForm(std::string starget);
+    ShrubberyCreationForm(const ShrubberyCreationForm &obj);
+    ShrubberyCreationForm &operator=(const ShrubberyCreationForm &obj);
+    ~ShrubberyCreationForm();
 		void executeAction() const;
 };
 
