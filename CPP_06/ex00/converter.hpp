@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   converter.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 10:50:44 by mmonika           #+#    #+#             */
-/*   Updated: 2025/08/20 13:50:46 by mmonika          ###   ########.fr       */
+/*   Updated: 2026/03/28 14:36:19 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,31 @@
 
 # include <iostream>
 # include <string>
+# include <limits>
+# include <iomanip>
+# include <cstdlib>
+# include <cerrno>
+# include <cmath>
 
 class ScalarConverter
 {
 	private:
-		ScalarConverter(); //to prevent being instantiate by user
+		ScalarConverter();
 		~ScalarConverter();
 		ScalarConverter(const ScalarConverter &obj);
 		ScalarConverter &operator=(const ScalarConverter &obj);
 	public:
-		static void convert(std::string str);
+		static void convert(const std::string &str);
 };
 
-void convertChar(std::string str, int len);
-void convertInt(std::string str);
-void convertFloat(std::string str);
-void convertDouble(std::string str);
-void nonPrintable(std::string str);
-
-	
-
+enum LiteralType 
+{
+	TYPE_CHAR,
+	TYPE_INT,
+	TYPE_FLOAT,
+	TYPE_DOUBLE,
+	TYPE_SPECIAL,
+	TYPE_INVALID
+};
 
 #endif
