@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 10:50:41 by mmonika           #+#    #+#             */
-/*   Updated: 2026/03/28 14:29:50 by mmonika          ###   ########.fr       */
+/*   Updated: 2026/03/28 15:31:59 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,12 @@ static bool isSpecial(const std::string &s) {
 
 static LiteralType detectType(const std::string &str) 
 {
-	if (str.size() == 1 && !std::isdigit(str[0]))
-		return TYPE_CHAR;
+	if (str.empty())
+		return TYPE_INVALID;
+
+	if ((str.size() == 3 && str[0] == '\'' && str[2] == '\'')
+		|| (str.size() == 1 && !std::isdigit(static_cast<unsigned char>(str[0]))))
+    return TYPE_CHAR;
 
 	if (isSpecial(str))
 		return TYPE_SPECIAL;
@@ -52,7 +56,7 @@ static LiteralType detectType(const std::string &str)
 		char *end; 
 		errno = 0;
 		std::strtof(str.c_str(), &end);
-		return (*end == 'f' && *(end+1) == '\0') ? TYPE_FLOAT : TYPE_INVALID;
+		return (*end == 'f' && *(end+1) == '\0' && errno != ERANGE) ? TYPE_FLOAT : TYPE_INVALID;
 	}
 	
 	if (hasDot) 
@@ -60,7 +64,7 @@ static LiteralType detectType(const std::string &str)
 		char *end; 
 		errno = 0;
 		std::strtod(str.c_str(), &end);
-		return (*end == '\0') ? TYPE_DOUBLE : TYPE_INVALID;
+		return (*end == '\0' && errno != ERANGE) ? TYPE_DOUBLE : TYPE_INVALID;
 	}
 
 	return TYPE_INVALID;
@@ -69,7 +73,7 @@ static LiteralType detectType(const std::string &str)
 static double convertToDouble(const std::string &s, LiteralType t) 
 {
 	if (t == TYPE_CHAR)
-		return s[0];
+		return (s.size() == 3 && s[0] == '\'' && s[2] == '\'') ? s[1] : s[0];
 
 	if (t == TYPE_INT)
 		return static_cast<double>(std::strtol(s.c_str(), NULL, 10));

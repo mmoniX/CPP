@@ -20,6 +20,7 @@
 # include <cstdlib>
 # include <cerrno>
 # include <cmath>
+# include <cctype>
 
 class ScalarConverter
 {

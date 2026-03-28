@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 12:45:23 by mmonika           #+#    #+#             */
-/*   Updated: 2025/08/21 14:53:51 by mmonika          ###   ########.fr       */
+/*   Updated: 2026/03/28 14:48:09 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERIALIZER_HPP
-# define SERIALISER_HPP
+# define SERIALIZER_HPP
 
-# include <cstdint>
+# include <stdint.h>
+#include <iostream>
 # include "Data.hpp"
 
 class Serializer
