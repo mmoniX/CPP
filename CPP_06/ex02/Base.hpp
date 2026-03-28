@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mmonika <mmonika@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 13:56:20 by mmonika           #+#    #+#             */
-/*   Updated: 2025/08/21 14:35:42 by mmonika          ###   ########.fr       */
+/*   Updated: 2026/03/28 16:00:41 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define BASE_HPP
 
 # include <iostream>
-# include <random>
+# include <cstdlib>
+#include <ctime>
 
 class Base
 {

@@ -1,7 +1,7 @@
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++17
 VAL = valgrind --leak-check=full --track-origins=yes
-SRC = main.cpp base.cpp
+SRC = main.cpp Base.cpp
 OBJ_DIR = obj
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 NAME = base
