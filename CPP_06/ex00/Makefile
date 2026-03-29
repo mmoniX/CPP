@@ -1,6 +1,7 @@
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++17
 VAL = valgrind --leak-check=full --track-origins=yes
+ARG ?= 0
 SRC = main.cpp converter.cpp
 OBJ_DIR = obj
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
@@ -28,6 +29,6 @@ fclean: clean
 re: fclean all
 
 valgrind: $(NAME)
-	$(VAL) ./$(NAME)
+	$(VAL) ./$(NAME) $(ARG)
 
 .PHONY: all clean fclean re valgrind
